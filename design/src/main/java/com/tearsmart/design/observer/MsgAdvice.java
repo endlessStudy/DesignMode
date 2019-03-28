@@ -1,5 +1,10 @@
 package com.tearsmart.design.observer;
 
+import lombok.Data;
+
+import java.util.Observable;
+
+
 /**
  * <p>
  * |****************************** *_* ******************************|
@@ -15,10 +20,17 @@ package com.tearsmart.design.observer;
  * @author tear-smart
  * @date 2019-03-27
  */
-public class MsgAdvice implements Observer {
+@Data
+public class MsgAdvice implements Observer{
+    private String name;
+
+    public MsgAdvice(String name) {
+        this.name = name;
+    }
 
     @Override
-    public void update() {
-
+    public void update(String msg) {
+        System.out.println(name + "接受到的消息为: " + msg);
     }
+
 }

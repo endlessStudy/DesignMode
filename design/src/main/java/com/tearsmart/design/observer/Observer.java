@@ -1,5 +1,7 @@
 package com.tearsmart.design.observer;
 
+import java.util.Observable;
+
 /**
  * <p>
  * |****************************** *_* ******************************|
@@ -15,6 +17,10 @@ package com.tearsmart.design.observer;
  * @author tear-smart
  * @date 2019-03-27
  */
-public interface Observer {
-    void update();
+public interface Observer{
+    /**
+     * 更新观察者信息
+     * @param msg
+     */
+    void update(String msg);
 }

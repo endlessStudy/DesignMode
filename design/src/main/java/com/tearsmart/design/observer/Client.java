@@ -17,8 +17,13 @@ package com.tearsmart.design.observer;
  */
 public class Client {
     public static void main(String[] args) {
-        MsgAdvice msgAdvice = new MsgAdvice();
-        WechatAdvice wechatAdvice = new WechatAdvice();
-        wechatAdvice.addObserver(msgAdvice);
+        Observer observer1 = new MsgAdvice("liu");
+        Observer observer2 = new MsgAdvice("wang");
+        Observer observer3 = new MsgAdvice("wu");
+        Wechat wechat = new Wechat();
+        wechat.registerObserver(observer1);
+        wechat.registerObserver(observer2);
+        wechat.registerObserver(observer3);
+        wechat.sendMsg("hello world");
     }
 }

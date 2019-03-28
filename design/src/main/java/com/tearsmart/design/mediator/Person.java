@@ -1,4 +1,4 @@
-package com.tearsmart.design.observer;
+package com.tearsmart.design.mediator;
 
 /**
  * <p>
@@ -11,26 +11,17 @@ package com.tearsmart.design.observer;
  * |            \/     \/             \/      \/     \/              |
  * |                                                                 |
  * |****************************** *_* ******************************|
- * 目标抽象类/被观察者
+ * 具体同事类
  * </p>
  * @author tear-smart
- * @date 2019-03-27
+ * @date 2019-03-28
  */
-public interface Subject{
-   /**
-      * 注册观察者
-      * @param observer
-      */
-     public void registerObserver(Observer observer);
+public abstract class Person {
+    protected String name;
+    protected AbstractMediator mediator;
 
-     /**
-      * 删除观察者
-      * @param observer
-      */
-     public void removeObserver(Observer observer);
-
-     /**
-      * 当主题状态发生改变时，这个方法需要被调用，以通知所有观察者
-      */
-     public void notifyObserver();
+    Person(String name, AbstractMediator mediator) {
+        this.name = name;
+        this.mediator = mediator;
+    }
 }
