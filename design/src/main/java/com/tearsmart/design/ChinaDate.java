@@ -1,7 +1,6 @@
 package com.tearsmart.design;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -255,11 +254,13 @@ public class ChinaDate {
                 temp = monthDays((int) nongDate[0], i);
             }
             // 解除闰月
-            if (nongDate[6] == 1 && i == (leap + 1))
+            if (nongDate[6] == 1 && i == (leap + 1)) {
                 nongDate[6] = 0;
+            }
             offset -= temp;
-            if (nongDate[6] == 0)
+            if (nongDate[6] == 0) {
                 nongDate[4]++;
+            }
         }
         if (offset == 0 && leap > 0 && i == leap + 1) {
             if (nongDate[6] == 1) {

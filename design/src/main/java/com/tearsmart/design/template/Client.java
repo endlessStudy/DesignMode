@@ -19,7 +19,8 @@ public class Client {
     public static void main(String[] args) {
         Gtrain gtrain = new Gtrain();
         // gtrain.byTrain();
-        CommonTrain commonTrain = new CommonTrain();
-        commonTrain.byTrain();
+        // CommonTrain commonTrain = new CommonTrain();
+        gtrain.byTrain();
+
     }
 }

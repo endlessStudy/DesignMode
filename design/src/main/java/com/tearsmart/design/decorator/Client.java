@@ -21,5 +21,6 @@ public class Client {
 		AbstractDecorator decorator = new DecoratorThree(new DecoratorSecond(new DecoratorFirst(person)));
 		decorator.wearClothes();
 		decorator.walkToWhere();
+
     }
 }
